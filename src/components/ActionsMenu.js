@@ -1,21 +1,10 @@
+import AlertDismissible  from "./AlertDismissible";
+
 function ActionsMenu() {
   return (
     <>
       <h1 className="m-2 text-center">Mascotas</h1>
-      <div className="">
-        <div
-          id="alert"
-          className="alert alert-danger alert-dismissible fade hide"
-          role="alert"
-        >
-          <strong>Ups!</strong> Ha ocurrido un error
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Close"
-          ></button>
-        </div>
+      <div className="d-flex">
         <button
           type="button"
           className="btn btn-primary m-2"
@@ -24,6 +13,7 @@ function ActionsMenu() {
         >
           <i className="fas fa-plus"></i> Nueva mascota
         </button>
+        <AlertDismissible />
       </div>
     </>
   );

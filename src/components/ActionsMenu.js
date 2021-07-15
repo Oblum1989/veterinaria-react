@@ -1,6 +1,11 @@
+import { useState } from "react";
 import AlertDismissible  from "./AlertDismissible";
+import { Button } from 'react-bootstrap';
+
 
 function ActionsMenu() {
+  const [showAlert, setShowAlert] = useState(false);
+  const alertSwitch = () => setShowAlert(!showAlert)
   return (
     <>
       <h1 className="m-2 text-center">Mascotas</h1>
@@ -13,7 +18,8 @@ function ActionsMenu() {
         >
           <i className="fas fa-plus"></i> Nueva mascota
         </button>
-        <AlertDismissible />
+        <Button onClick={alertSwitch}>Show Alert</Button>
+        {showAlert && <AlertDismissible alertSwitch={alertSwitch}/> }
       </div>
     </>
   );

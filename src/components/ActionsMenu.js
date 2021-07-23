@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AlertDismissible  from "./AlertDismissible";
 import { Button } from 'react-bootstrap';
+import ModalForm from "./ModalForm";
 
 
 function ActionsMenu() {
@@ -10,16 +11,9 @@ function ActionsMenu() {
     <>
       <h1 className="m-2 text-center">Mascotas</h1>
       <div className="d-flex">
-        <button
-          type="button"
-          className="btn btn-primary m-2"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-        >
-          <i className="fas fa-plus"></i> Nueva mascota
-        </button>
-        <Button onClick={alertSwitch}>Show Alert</Button>
-        {showAlert && <AlertDismissible alertSwitch={alertSwitch}/> }
+        <ModalForm />
+        <Button onClick={alertSwitch} className="btn btn-primary m-2">Show Alert</Button>
+        {showAlert && <AlertDismissible alertSwitch={alertSwitch} /> }
       </div>
     </>
   );
